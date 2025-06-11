@@ -14,41 +14,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity"
-            maxWidth="-Infinity"
-            minHeight="-Infinity"
-            minWidth="-Infinity"
-            prefHeight="429.0"
-            prefWidth="861.0"
-            xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.khietvan.ws2.Controllers.VehicleController"
->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.khietvan.ws2.Controllers.VehicleController">
     <children>
         <Label layoutX="25.0" layoutY="21.0" text="Vehicle details">
             <font>
-                <Font size="14.0" />
+                <Font name="System Bold Italic" size="14.0" />
             </font>
         </Label>
         <Accordion layoutX="344.0" layoutY="112.0" />
         <VBox layoutX="42.0" layoutY="200.0" prefHeight="159.0" prefWidth="171.0" spacing="10.0">
             <children>
-                <Button fx:id="logMaintenanceButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="Log Maintenance Records" onAction="#handleMaintenance"/>
-                <Button fx:id="logUsageButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="Log Usage Records" />
-                <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="Search Vehicle" onAction="#searchVehicle"/>
-                <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="Save Vehicle" onAction="#saveData"/>
-                <Button fx:id="clearButton" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="169.0" text="Clear Search" onAction="#clearSearch" />
+                <Button fx:id="logMaintenanceButton" mnemonicParsing="false" onAction="#handleMaintenance" prefHeight="30.0" prefWidth="169.0" text="Log Maintenance Records" />
+                <Button fx:id="logUsageButton" mnemonicParsing="false" onAction="#handleUsage" prefHeight="30.0" prefWidth="169.0" text="Log Usage Records" />
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchVehicle" prefHeight="30.0" prefWidth="169.0" text="Search Vehicle" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveData" prefHeight="30.0" prefWidth="169.0" text="Save Vehicle" />
+                <Button fx:id="clearButton" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#clearSearch" prefHeight="30.0" prefWidth="169.0" text="Clear Search" />
             </children>
         </VBox>
-        <TableView fx:id="table" layoutX="230.0" layoutY="14.0" prefHeight="337.0" prefWidth="602.0">
+        <TableView fx:id="table" layoutX="230.0" layoutY="14.0" prefHeight="357.0" prefWidth="687.0">
             <columns>
-                <TableColumn fx:id="colYear" prefWidth="75.0" text="Year" />
-                <TableColumn fx:id="colMake" prefWidth="75.0" text="Make" />
-                <TableColumn fx:id="colModel" prefWidth="75.0" text="Model" />
-                <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
-                <TableColumn fx:id="colMaintenance" prefWidth="156.5" text="Maintenance Records" />
-                <TableColumn fx:id="colUsage" prefWidth="145.5" text="Usage Records" />
+                <TableColumn fx:id="colYear" prefWidth="60.0" text="Year" />
+                <TableColumn fx:id="colMake" prefWidth="60.0" text="Make" />
+                <TableColumn fx:id="colModel" prefWidth="68.0" text="Model" />
+                <TableColumn fx:id="colType" prefWidth="65.0" text="Type" />
+                <TableColumn fx:id="colMaintenance" prefWidth="126.0" text="Maintenance Records" />
+                <TableColumn fx:id="colUsage" prefWidth="299.0" text="Usage Records" />
             </columns>
         </TableView>
         <GridPane layoutX="37.0" layoutY="54.0" prefHeight="121.0" prefWidth="178.0">

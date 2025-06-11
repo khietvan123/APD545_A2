@@ -18,10 +18,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 public class VehicleController implements Initializable {
-    //Example data
+    //With example data
     private ObservableList<Vehicle> m_vehicles = FXCollections.observableArrayList(
             new Vehicle("2018","Honda","Accord","Sedan"),
             new Vehicle("2022","Toyota","Camry","Sedan"),
@@ -30,7 +29,6 @@ public class VehicleController implements Initializable {
 
     @FXML
     private TableView<Vehicle> table;
-
 
     @FXML
     private TableColumn<Vehicle, String> colMaintenance;
@@ -136,7 +134,11 @@ public class VehicleController implements Initializable {
 
     @FXML
     private void clearSearch(ActionEvent event) {
-        table.setItems(m_vehicles);  // Show full list again
+        table.setItems(m_vehicles);// Show full list again
+        m_year.setText("");
+        m_make.setText("");
+        m_model.setText("");
+        m_comboBox.getSelectionModel().clearSelection(); //clear combo box
     }
 
     @FXML
@@ -167,19 +169,58 @@ public class VehicleController implements Initializable {
     }
 
     @FXML
-    //Maintenance
-    private void handleMaintenance() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/khietvan/Views/MaintenanceDialog.fxml")); //load the dialog
+    private void handleMaintenance(ActionEvent e) throws IOException {
+        Vehicle selected = table.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a vehicle from the table first.");
+            alert.show();
+            return;
+        }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/khietvan/Views/MaintenanceDialog.fxml"));
         Parent root = loader.load();
 
-        // Create the popup stage
+        // Get the controller and pass the vehicle
+        MaintenanceController controller = loader.getController();
+        controller.setVehicle(selected);
+
         Stage stage = new Stage();
         stage.setTitle("Vehicle Maintenance");
         stage.setScene(new Scene(root));
         stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL); // Block interaction with other windows
-        stage.showAndWait(); // Wait for the popup to close before continuing
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
 
+        // Refresh table to reflect updated data
+        table.refresh();
+    }
+
+    @FXML
+    public void handleUsage(ActionEvent event) throws IOException{
+        Vehicle selected = table.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a vehicle from the table first.");
+            alert.show();
+            return;
+        }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/khietvan/Views/UsageDialog.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller and pass the vehicle
+        UsageController controller = loader.getController();
+        controller.setVehicle(selected);
+
+        Stage stage = new Stage();
+        stage.setTitle("Vehicle Usage");
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+
+        // Refresh table to reflect updated data
+        table.refresh();
     }
 }
 

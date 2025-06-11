@@ -1,5 +1,8 @@
 package com.khietvan.ws2.Models;
 
+import com.khietvan.ws2.Controllers.MaintenanceController;
+import javafx.event.ActionEvent;
+
 public class Vehicle {
     private String year;
     private String make;

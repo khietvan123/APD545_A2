@@ -11,7 +11,17 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane
+        maxHeight="-Infinity"
+        maxWidth="-Infinity"
+        minHeight="-Infinity"
+        minWidth="-Infinity"
+        prefHeight="248.0"
+        prefWidth="488.0"
+        xmlns="http://javafx.com/javafx/23.0.1"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.khietvan.ws2.Controllers.MaintenanceController"
+>
    <children>
       <GridPane layoutX="85.0" layoutY="54.0" prefHeight="118.0" prefWidth="319.0">
         <columnConstraints>
@@ -29,8 +39,8 @@
             <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button fx:id="confirmButton" layoutX="135.0" layoutY="198.0" mnemonicParsing="false" text="Confirm" />
-      <Button fx:id="cancelButton" layoutX="303.0" layoutY="198.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="confirmButton" layoutX="135.0" layoutY="198.0" mnemonicParsing="false" text="Confirm" onAction="#confirmAction" />
+      <Button fx:id="cancelButton" layoutX="303.0" layoutY="198.0" mnemonicParsing="false" text="Cancel" onAction="#cancelAction"/>
       <Label layoutX="171.0" layoutY="22.0" text="Vehicle Maintenance">
          <font>
             <Font name="System Bold" size="15.0" />
