@@ -1,7 +1,18 @@
+/**********************************************
+ Workshop #2
+ Course:APD545 - SU25
+ Last Name:Phan
+ First Name:Khiet Van
+ ID:147072235
+ Section:NAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date:11th June, 2025
+ **********************************************/
 package com.khietvan.ws2.Controllers;
 
+import com.khietvan.ws2.Models.IFunctional;
 import com.khietvan.ws2.Models.Vehicle;
-import com.khietvan.ws2.Views.IFunctional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -56,7 +67,7 @@ public class MaintenanceController implements IFunctional {
         else{
             String inputDate = date.toString();
             if (!inputDate.isEmpty() && !desc.isEmpty() && selectedVehicle != null) {
-                selectedVehicle.setMaintenance(date + " - " + desc);
+                selectedVehicle.setMaintenance(date + " | " + desc);
             }
             closeWindow();
         }

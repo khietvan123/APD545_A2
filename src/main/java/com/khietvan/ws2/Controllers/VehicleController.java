@@ -22,9 +22,19 @@ import java.util.ResourceBundle;
 public class VehicleController implements Initializable {
     //With example data
     private ObservableList<Vehicle> m_vehicles = FXCollections.observableArrayList(
-            new Vehicle("2018","Honda","Accord","Sedan"),
-            new Vehicle("2022","Toyota","Camry","Sedan"),
-            new Vehicle("2009","Toyota","Highlander","SUV")
+            new Vehicle("2018", "Honda", "Accord", "Sedan"),
+            new Vehicle("2022", "Toyota", "Camry", "Sedan"),
+            new Vehicle("2009", "Toyota", "Highlander", "SUV"),
+            new Vehicle("2021", "Ford", "F-150", "Truck"),
+            new Vehicle("2019", "Chevrolet", "Malibu", "Sedan"),
+            new Vehicle("2020", "Subaru", "Outback", "SUV"),
+            new Vehicle("2023", "Tesla", "Model 3", "Sedan"),
+            new Vehicle("2017", "Hyundai", "Elantra", "Sedan"),
+            new Vehicle("2016", "Mazda", "CX-5", "SUV"),
+            new Vehicle("2015", "Nissan", "Altima", "Sedan"),
+            new Vehicle("2020", "BMW", "X5", "SUV"),
+            new Vehicle("2022", "Kia", "Sportage", "SUV"),
+            new Vehicle("2023", "Audi", "Q3", "SUV")
     );
 
     @FXML

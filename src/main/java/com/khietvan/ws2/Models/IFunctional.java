@@ -1,4 +1,4 @@
-package com.khietvan.ws2.Views;
+package com.khietvan.ws2.Models;
 
 import javafx.event.ActionEvent;
 

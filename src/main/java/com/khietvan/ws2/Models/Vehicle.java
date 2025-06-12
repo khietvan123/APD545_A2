@@ -1,6 +1,17 @@
+/**********************************************
+ Workshop #2
+ Course:APD545 - SU25
+ Last Name:Phan
+ First Name:Khiet Van
+ ID:147072235
+ Section:NAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date:11th June, 2025
+ **********************************************/
+
 package com.khietvan.ws2.Models;
 
-import com.khietvan.ws2.Controllers.MaintenanceController;
 import javafx.event.ActionEvent;
 
 public class Vehicle {

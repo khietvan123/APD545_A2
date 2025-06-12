@@ -1,7 +1,18 @@
+/**********************************************
+ Workshop #2
+ Course:APD545 - SU25
+ Last Name:Phan
+ First Name:Khiet Van
+ ID:147072235
+ Section:NAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date:11th June, 2025
+ **********************************************/
 package com.khietvan.ws2.Controllers;
 
+import com.khietvan.ws2.Models.IFunctional;
 import com.khietvan.ws2.Models.Vehicle;
-import com.khietvan.ws2.Views.IFunctional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -50,7 +61,6 @@ public class UsageController implements IFunctional {
         a.setTitle("WARNING");
         try{
             Double kilometer = Double.parseDouble(usageKilometer.getText());
-
             LocalDate startD = startDate.getValue();
             LocalDate endD = endDate.getValue();
             LocalDate currentDate = LocalDate.now();
@@ -62,7 +72,7 @@ public class UsageController implements IFunctional {
                 String startDateString = startD.toString();
                 String endDateString = endD.toString();
                 if(!startDateString.isEmpty() && !endDateString.isEmpty() && selectedVehicle != null){
-                    selectedVehicle.setUsage(startD +" - "+endD+" | Driven (km/h): " +kilometer);
+                    selectedVehicle.setUsage(startD +" - "+endD+" | Driven kilometers: " +kilometer);
                     closeWindow();
                 }
             }
